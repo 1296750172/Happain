@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工具库测试</title>
+  
+</head>
+<body onload="demo()">
+  <button onclick="demo1()">点击</button>
+  <button id="btn">节流</button>
+  <button id="btn1">防抖</button>
+  <script src="./函数相关/funUtil.js"></script>
+  <script>
+    function demo () { 
+      console.log(1111)
+    }
+    function demo1 () { 
+      console.log(2222)
+    }
+    document.getElementById("btn").addEventListener('click', throttle((e) => { 
+      console.log(1111)
+      console.log(e)
+    },1000))
+
+    document.getElementById("btn1").addEventListener('click', debounce((e) => { 
+      console.log(222)
+      console.log(e)
+    },1000))
+  </script>
+</body>
+</html>
